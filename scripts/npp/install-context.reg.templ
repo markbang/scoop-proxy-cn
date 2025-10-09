@@ -1,8 +1,14 @@
 Windows Registry Editor Version 5.00
 
+; --- CONTEXT MENU FOR *ALL* FILES ---
 [HKEY_CLASSES_ROOT\*\shell\NotePad++]
+; The &N makes N the keyboard shortcut.
 @="Edit with &Notepad++"
-"Icon"="%EVAL_INST_PATH%\\notepad++.exe"
+
+; Replace "C:\\Program Files\\Notepad++\\notepad++.exe" 
+; with the actual path if your installation differs.
+"Icon"="C:\\Program Files\\Notepad++\\notepad++.exe"
  
 [HKEY_CLASSES_ROOT\*\shell\NotePad++\Command]
-@="%EVAL_INST_PATH%\\notepad++.exe \"%1\""
+; Runs Notepad++ and passes the selected file path ("%1")
+@="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
