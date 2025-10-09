@@ -1,8 +1,40 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_CLASSES_ROOT\*\shell\NotePad++]
-@="Edit with &Notepad++"
-"Icon"="%EVAL_INST_PATH%\\notepad++.exe"
- 
-[HKEY_CLASSES_ROOT\*\shell\NotePad++\Command]
-@="%EVAL_INST_PATH%\\notepad++.exe \"%1\""
+; ==============================================
+;  Add "Edit with Notepad++" to Right-Click Menu
+;  Enhanced UI/UX Version (Supports Files & Folders)
+;  Author: Madhu R.
+;  ==============================================
+
+; 🔹 For All Files
+[HKEY_CLASSES_ROOT\*\shell\NotepadPlusPlus]
+@="📝 Edit with Notepad++"
+"Icon"="C:\\Program Files\\Notepad++\\notepad++.exe"
+"Extended"=""
+
+[HKEY_CLASSES_ROOT\*\shell\NotepadPlusPlus\command]
+@="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
+
+
+; 🔹 For Folders (Optional)
+[HKEY_CLASSES_ROOT\Directory\shell\NotepadPlusPlus]
+@="📝 Edit Folder with Notepad++"
+"Icon"="C:\\Program Files\\Notepad++\\notepad++.exe"
+"Extended"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\NotepadPlusPlus\command]
+@="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
+
+
+; ==============================================
+;  Optional: For .txt files only (cleaner menu)
+;  Uncomment this section if you want it limited
+;  to text files.
+; ==============================================
+; [HKEY_CLASSES_ROOT\txtfile\shell\NotepadPlusPlus]
+; @="📝 Edit with Notepad++"
+; "Icon"="C:\\Program Files\\Notepad++\\notepad++.exe"
+; "Extended"=""
+
+; [HKEY_CLASSES_ROOT\txtfile\shell\NotepadPlusPlus\command]
+; @="\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"%1\""
